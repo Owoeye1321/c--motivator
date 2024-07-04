@@ -1,4 +1,5 @@
 ﻿using System;
+using LiftDepression.Helpers;
 using LiftDepression.Interface;
 
 namespace LiftDepression.Service
@@ -13,7 +14,13 @@ namespace LiftDepression.Service
 
         public Task GetAllPictures()
         {
-            throw new NotImplementedException();
+            try {
+
+            }catch(Exception Ex)
+            {
+                throw new ErrorHelper(Ex.Message);
+            }
+           
         }
 
         public Task GetAllQuotes()
