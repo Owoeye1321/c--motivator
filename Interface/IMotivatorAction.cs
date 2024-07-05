@@ -3,10 +3,10 @@ namespace LiftDepression.Interface
 {
 	public interface IMotivatorAction
 	{
-		Task GetSingleQuote();
-		Task GetAllQuotes();
-		Task GetSinglePicture();
-		Task GetAllPictures();
+		Task<IGetMotivationResponse> GetSingleQuote();
+		Task<IEnumerable<IGetMotivationResponse>> GetAllQuotes();
+		Task<IGetAllPicturesResponse> GetSinglePicture();
+		Task<IEnumerable<IGetAllPicturesResponse>> GetAllPictures();
 	}
 }
 

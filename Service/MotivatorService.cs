@@ -1,6 +1,8 @@
 ﻿using System;
 using LiftDepression.Helpers;
+using System.Net.Http.Headers;
 using LiftDepression.Interface;
+using System.Text.Json;
 
 namespace LiftDepression.Service
 {
@@ -12,30 +14,73 @@ namespace LiftDepression.Service
 
 		}
 
-        public Task GetAllPictures()
-        {
-            try {
 
-            }catch(Exception Ex)
+       public async Task<IEnumerable<IGetMotivationResponse>> GetAllQuotes()
+        {
+            try
+            {
+
+
+                var client = new HttpClient();
+                var request = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Get,
+                    RequestUri = new Uri("https://motivational-content.p.rapidapi.com/quotes/4"),
+                    Headers =
+                    {
+                        { "x-rapidapi-key", "37f4bc3034msha49c34d8cab9a70p1a537fjsnc2dbc343db77" },
+                        { "x-rapidapi-host", "motivational-content.p.rapidapi.com" },
+                    },
+                };
+                using (var response = await client.SendAsync(request))
+                {
+                    response.EnsureSuccessStatusCode();
+                    var  responseString = await response.Content.ReadAsStringAsync();
+                    IEnumerable<IGetMotivationResponse> body = JsonSerializer.Deserialize<IEnumerable<IGetMotivationResponse>>(responseString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                    return body;
+                }
+            }
+            catch (Exception Ex)
             {
                 throw new ErrorHelper(Ex.Message);
             }
-           
+        }
+       
+
+        Task<IGetMotivationResponse> GetSingleQuote()
+        {
+            try
+            {
+            }
+            catch (Exception Ex)
+            {
+                throw new ErrorHelper(Ex.Message);
+            }
+        }
+        public async Task<IEnumerable<IGetAllPicturesResponse>> GetAllPictures()
+        {
+            try
+            {
+
+
+            }
+            catch (Exception Ex)
+            {
+                throw new ErrorHelper(Ex.Message);
+            }
+
         }
 
-        public Task GetAllQuotes()
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task GetSinglePicture()
+        Task<IGetAllPicturesResponse> GetSinglePicture()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task GetSingleQuote()
-        {
-            throw new NotImplementedException();
+            try
+            {
+            }
+            catch (Exception Ex)
+            {
+                throw new ErrorHelper(Ex.Message);
+            }
         }
     }
 }
