@@ -1,12 +1,12 @@
 ﻿using System;
 namespace LiftDepression.Interface
 {
-	public interface IGetPicturesResponse
+	public interface IGetMotivationResponse
 	{
         string id { get; set; }
         string quote { get; set; }
     }
-    public interface IGetAllPicturesResponse
+    public interface IGetPicturesResponse
     {
 
         string id { get; set; }

@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace LiftDepression.Service
 {
-	public class MotivatorService :IMotivatorAction
+    public class MotivatorService : IMotivatorAction
 
 	{
 		public MotivatorService()
@@ -47,41 +47,41 @@ namespace LiftDepression.Service
         }
        
 
-        Task<IGetMotivationResponse> GetSingleQuote()
-        {
-            try
-            {
-            }
-            catch (Exception Ex)
-            {
-                throw new ErrorHelper(Ex.Message);
-            }
-        }
-        public async Task<IEnumerable<IGetAllPicturesResponse>> GetAllPictures()
-        {
-            try
-            {
+        //Task<IGetMotivationResponse> GetSingleQuote()
+        //{
+        //    try
+        //    {
+        //    }
+        //    catch (Exception Ex)
+        //    {
+        //        throw new ErrorHelper(Ex.Message);
+        //    }
+        //}
+        //public async Task<IEnumerable<IGetPicturesResponse>> GetAllPictures()
+        //{
+        //    try
+        //    {
 
 
-            }
-            catch (Exception Ex)
-            {
-                throw new ErrorHelper(Ex.Message);
-            }
+        //    }
+        //    catch (Exception Ex)
+        //    {
+        //        throw new ErrorHelper(Ex.Message);
+        //    }
 
-        }
+        //}
 
 
-        Task<IGetAllPicturesResponse> GetSinglePicture()
-        {
-            try
-            {
-            }
-            catch (Exception Ex)
-            {
-                throw new ErrorHelper(Ex.Message);
-            }
-        }
+        //Task<IGetPicturesResponse> GetSinglePicture()
+        //{
+        //    try
+        //    {
+        //    }
+        //    catch (Exception Ex)
+        //    {
+        //        throw new ErrorHelper(Ex.Message);
+        //    }
+        //}
     }
 }
 
