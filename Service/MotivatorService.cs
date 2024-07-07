@@ -34,6 +34,10 @@ namespace LiftDepression.Service
                 };
                 using (var response = await client.SendAsync(request))
                 {
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        throw new ErrorHelper($"{response.StatusCode} API Error");
+                    }
                     response.EnsureSuccessStatusCode();
                     var  responseString = await response.Content.ReadAsStringAsync();
                     IEnumerable<IGetMotivationResponse> body = JsonSerializer.Deserialize<IEnumerable<IGetMotivationResponse>>(responseString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
