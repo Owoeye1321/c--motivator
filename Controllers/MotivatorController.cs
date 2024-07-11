@@ -3,6 +3,7 @@ using LiftDepression.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using LiftDepression.Service;
 using LiftDepression.Interface;
+using System.Net;
 
 namespace LiftDepression.Controllers
 {
@@ -21,11 +22,13 @@ namespace LiftDepression.Controllers
         {
 			try {
 				IEnumerable<IGetMotivationResponse> result = await _quoteService.GetAllQuotes();
-				return Ok(new { code = System.Net.HttpStatusCode.OK, message = "success", data = result });
+                AllQuoteResponseData response = new AllQuoteResponseData { Code = HttpStatusCode.OK, Message = "success", Data = result };
+
+                return Ok(response);
 
 			} catch(ErrorHelper Ex)
 			{
-				return BadRequest(new { code = System.Net.HttpStatusCode.BadRequest, message = Ex.Message });
+				return BadRequest(new { code = HttpStatusCode.BadRequest, message = Ex.Message });
 			}
         }
     }

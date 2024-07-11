@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+
 namespace LiftDepression.Interface
 {
 	public interface IGetMotivationResponse
@@ -22,6 +24,19 @@ namespace LiftDepression.Interface
         string name { get; set; }
         string url { get; set; }
     }
-   
+    public interface IAllQuoteResponseData
+    {
+        HttpStatusCode Code { get; set; }
+        string Message { get; set; }
+        object Data { get; set; }
+    }
+
+    public class AllQuoteResponseData : IAllQuoteResponseData
+    {
+        public HttpStatusCode Code { get; set; }
+        public string Message { get; set; }
+        public object Data { get; set; }
+    }
+
 }
 
