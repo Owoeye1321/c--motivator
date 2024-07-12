@@ -28,14 +28,14 @@ namespace LiftDepression.Interface
     {
         HttpStatusCode Code { get; set; }
         string Message { get; set; }
-        object Data { get; set; }
+        IEnumerable<IGetMotivationResponse> Data { get; set; }
     }
 
     public class AllQuoteResponseData : IAllQuoteResponseData
     {
         public HttpStatusCode Code { get; set; }
         public string Message { get; set; }
-        public object Data { get; set; }
+        public IEnumerable<IGetMotivationResponse> Data { get; set; }
     }
 
 }

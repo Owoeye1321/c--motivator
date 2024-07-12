@@ -51,29 +51,29 @@ namespace LiftDepression.Service
         }
 
 
-        Task<IGetMotivationResponse> GetSingleQuote()
-        {
-            try
-            {
-            }
-            catch (Exception Ex)
-            {
-                throw new ErrorHelper(Ex.Message);
-            }
-        }
-        public async Task<IEnumerable<IGetPicturesResponse>> GetAllPictures()
-        {
-            try
-            {
+        //Task<IGetMotivationResponse> GetSingleQuote()
+        //{
+        //    try
+        //    {
+        //    }
+        //    catch (Exception Ex)
+        //    {
+        //        throw new ErrorHelper(Ex.Message);
+        //    }
+        //}
+        //public async Task<IEnumerable<IGetPicturesResponse>> GetAllPictures()
+        //{
+        //    try
+        //    {
 
 
-            }
-            catch (Exception Ex)
-            {
-                throw new ErrorHelper(Ex.Message);
-            }
+        //    }
+        //    catch (Exception Ex)
+        //    {
+        //        throw new ErrorHelper(Ex.Message);
+        //    }
 
-        }
+        //}
 
 
         //Task<IGetPicturesResponse> GetSinglePicture()
