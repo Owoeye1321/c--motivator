@@ -38,5 +38,24 @@ namespace LiftDepression.Interface
         public IEnumerable<IGetMotivationResponse> Data { get; set; }
     }
 
+    public interface singleQuoteRequest
+    {
+        string id { get; set; }
+    }
+
+
+    public interface ISingleQuoteResponse
+    {
+        HttpStatusCode Code { get; set; }
+        string Message { get; set; }
+        IGetMotivationResponse Data { get; set; }
+    }
+    public class SingleQuoteResponse : ISingleQuoteResponse
+    {
+        public HttpStatusCode Code { get; set; }
+        public string Message { get; set; }
+        public IGetMotivationResponse Data { get; set; }
+    }
+
 }
 

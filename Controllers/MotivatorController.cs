@@ -31,6 +31,26 @@ namespace LiftDepression.Controllers
 				return BadRequest(new { code = HttpStatusCode.BadRequest, message = Ex.Message });
 			}
         }
+
+		[HttpGet("/quote/{id}")]
+		public async Task<IActionResult> GetSingleQuote(singleQuoteRequest id)
+		{
+			try {
+				IGetMotivationResponse result = await _quoteService.GetSingleQuote(id);
+				SingleQuoteResponse response = new SingleQuoteResponse
+				{
+					Code = HttpStatusCode.OK,
+					Message = "success",
+					Data = result
+				};
+
+				return Ok(response);
+            }
+            catch(ErrorHelper Ex)
+			{
+				return BadRequest(new { code = HttpStatusCode.BadRequest, message = Ex.Message });
+			};
+		}
     }
 }
 
