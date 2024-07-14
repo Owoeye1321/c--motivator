@@ -40,7 +40,7 @@ namespace LiftDepression.Service
                     }
                     response.EnsureSuccessStatusCode();
                     var  responseString = await response.Content.ReadAsStringAsync();
-                    IEnumerable<IGetMotivationResponse> body = JsonSerializer.Deserialize<IEnumerable<IGetMotivationResponse>>(responseString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                    IEnumerable<IGetMotivationResponse> body = JsonSerializer.Deserialize<List<GetMotivationRespones>>(responseString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
                     return body;
                 }
             }

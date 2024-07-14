@@ -8,6 +8,13 @@ namespace LiftDepression.Interface
         string id { get; set; }
         string quote { get; set; }
     }
+
+
+    public class GetMotivationRespones : IGetMotivationResponse
+    {
+        public string id { get; set; }
+        public string quote { get; set; }
+    }
     public interface IGetPicturesResponse
     {
 
