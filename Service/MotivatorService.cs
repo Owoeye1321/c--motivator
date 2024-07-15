@@ -74,7 +74,7 @@ namespace LiftDepression.Service
                     }
                     response.EnsureSuccessStatusCode();
                     var responseString = await response.Content.ReadAsStringAsync();
-                    IGetMotivationResponse body = JsonSerializer.Deserialize<IGetMotivationResponse>(responseString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true
+                    IGetMotivationResponse body = JsonSerializer.Deserialize<GetMotivationRespones>(responseString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true
                     });
                     return body;
 
