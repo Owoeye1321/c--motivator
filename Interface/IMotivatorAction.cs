@@ -5,7 +5,7 @@ namespace LiftDepression.Interface
 	{
 		Task<IGetMotivationResponse> GetSingleQuote(singleQuoteRequest id);
 		Task<IEnumerable<IGetMotivationResponse>> GetAllQuotes();
-		//Task<IGetPicturesResponse> GetSinglePicture();
+		Task<IGetPicturesResponse> GetSinglePicture();
 		//Task<IEnumerable<IGetPicturesResponse>> GetAllPictures();
 	}
 }
