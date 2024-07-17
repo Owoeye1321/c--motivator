@@ -31,6 +31,13 @@ namespace LiftDepression.Interface
         string name { get; set; }
         string url { get; set; }
     }
+    public class Source : ISource
+    {
+        public string name { get; set; }
+        public string url { get; set; }
+
+    }
+
     public interface IAllQuoteResponseData
     {
         HttpStatusCode Code { get; set; }

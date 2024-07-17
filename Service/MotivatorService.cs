@@ -85,19 +85,19 @@ namespace LiftDepression.Service
                 throw new ErrorHelper(Ex.Message);
             }
         }
-        //public async Task<IEnumerable<IGetPicturesResponse>> GetAllPictures()
-        //{
-        //    try
-        //    {
+        public async Task<IEnumerable<IGetPicturesResponse>> GetAllPictures()
+        {
+            try
+            {
 
 
-        //    }
-        //    catch (Exception Ex)
-        //    {
-        //        throw new ErrorHelper(Ex.Message);
-        //    }
+            }
+            catch (Exception Ex)
+            {
+                throw new ErrorHelper(Ex.Message);
+            }
 
-        //}
+        }
 
 
         //Task<IGetPicturesResponse> GetSinglePicture()
