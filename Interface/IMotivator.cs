@@ -23,7 +23,7 @@ namespace LiftDepression.Interface
         string largeImage { get; set;}
         string mediumImage {get; set;}
         string smallImage {get; set; }
-        ISource source { get; set; }
+        Source source { get; set; }
 
     }
     public interface ISource
@@ -36,6 +36,16 @@ namespace LiftDepression.Interface
         public string name { get; set; }
         public string url { get; set; }
 
+    }
+
+    public class GetPicturesResponse : IGetPicturesResponse
+    {
+        public string id { get; set; }
+        public string image { get; set; }
+        public string largeImage { get; set; }
+        public string mediumImage { get; set; }
+        public string smallImage { get; set; }
+        public Source source { get; set; }
     }
 
     public interface IAllQuoteResponseData
