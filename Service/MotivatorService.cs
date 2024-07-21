@@ -89,7 +89,17 @@ namespace LiftDepression.Service
         {
             try
             {
-
+                var client = new HttpClient();
+                var request = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Get,
+                    RequestUri = new Uri("https://motivational-content.p.rapidapi.com/pics"),
+                    Headers =
+                    {
+                        { "x-rapidapi-key", "37f4bc3034msha49c34d8cab9a70p1a537fjsnc2dbc343db77" },
+                        { "x-rapidapi-host", "motivational-content.p.rapidapi.com" },
+                    },
+                };
 
             }
             catch (Exception Ex)
